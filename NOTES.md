@@ -170,17 +170,35 @@ a contact form is ever wanted.
 Given the ToS reading is a judgement call and switching costs nothing, either
 is a reasonable way to not have the question at all.
 
+### Repository layout
+
+Everything served lives in **`html/`**. Everything else stays at the repo root
+and is never published:
+
+    html/            <- the site, and only the site
+      index.html  css/  js/  img/
+      robots.txt  sitemap.xml  favicon.ico
+      CNAME        www.ecoledeballetmk.com
+      .nojekyll    turns Jekyll off; nothing here needs processing
+    NOTES.md       <- this file, not served
+    .gitignore
+
+This keeps `NOTES.md` off the public site. It names the claims that are
+unverified and says the 設備 copy is inaccurate — Pages serves whatever is in
+the publishing source, and Jekyll would have turned it into `/NOTES.html`.
+
+Point Pages at `html/` in Settings. Note that the branch-source dropdown only
+lists `/` and `/docs`; per GitHub's docs, "the source folder can either be the
+root of the repository (/) on the source branch or a /docs folder on the source
+branch." If `html/` can't be selected, rename it:
+
+    git mv html docs
+
+Nothing inside the directory has to change — every path in the site is relative
+and internal, so the folder can be called anything without breaking a link.
+
 ### Before going live
 
-- **Move `NOTES.md` out of what gets served.** Pages publishes everything in the
-  publishing source, and Jekyll turns Markdown into HTML, so this file would be
-  live at `/NOTES.html` for anyone with the URL. It names the claims that are
-  unverified and says the 設備 copy is wrong. Either delete it at launch, or set
-  the Pages publishing source to a `docs/` subdirectory and keep notes at the
-  repo root.
-- **Add `.nojekyll`** at the repo root. Disables Jekyll entirely: nothing gets
-  transformed, underscore-prefixed paths stop being special, builds are faster.
-  For a hand-written static site there is no reason to leave Jekyll on.
 - **A private repo does not make the site private.** Pages output is publicly
   reachable regardless — per-site access control is Enterprise only. The repo
   stays private; the site is open to anyone with the URL.
