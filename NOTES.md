@@ -127,6 +127,90 @@ descriptions but in **no page's body copy**. Miho's prose says バレエ constan
 and never the compound people actually type. Worth one natural mention per page
 once the locations give you a sentence to put it in.
 
+## Hosting — GitHub Pages
+
+Static, no backend, no form handler, ~400KB. Pages fits it well. Nothing here
+has been done yet; this is the pre-launch list.
+
+### Terms of service
+
+The clause worth knowing:
+
+> GitHub Pages is not intended for or allowed to be used as a free web hosting
+> service to run your online business, e-commerce site, or any other website
+> that is primarily directed at either facilitating commercial transactions or
+> providing commercial software as a service (SaaS).
+
+A brochure site for a business is not the same as running a business on Pages —
+organization sites are an explicitly supported category. This site has no
+checkout, no payment processing, no booking flow and no SaaS, only information
+and a `mailto:`. That is clear of the restriction.
+
+It would become questionable if tuition payments or an online enrolment
+transaction were added to the site. Enquiries by email that lead to payment
+arranged elsewhere are not that.
+
+**The wording is genuinely ambiguous, though.** "To run your online business"
+can be read as covering any business site, not just transactional ones. The
+reading above — that the trailing "primarily directed at facilitating
+commercial transactions" defines the category — is supported by GitHub
+documenting organization sites as a use case, and by how many company marketing
+sites run on Pages. It is an interpretation, not a rule anyone can point at.
+
+Soft limits: 1GB repo, 100GB bandwidth/month, 10 builds/hour. Not close to any.
+
+### If the ambiguity isn't worth it
+
+**Cloudflare Pages** or **Netlify**. Both free, both explicitly fine with
+business sites, both deploy this repo unchanged with free HTTPS and a custom
+domain. Cloudflare Pages has no private-repo plan restriction either, which
+removes the GitHub Team question as well. Netlify adds native form handling if
+a contact form is ever wanted.
+
+Given the ToS reading is a judgement call and switching costs nothing, either
+is a reasonable way to not have the question at all.
+
+### Before going live
+
+- **Move `NOTES.md` out of what gets served.** Pages publishes everything in the
+  publishing source, and Jekyll turns Markdown into HTML, so this file would be
+  live at `/NOTES.html` for anyone with the URL. It names the claims that are
+  unverified and says the 設備 copy is wrong. Either delete it at launch, or set
+  the Pages publishing source to a `docs/` subdirectory and keep notes at the
+  repo root.
+- **Add `.nojekyll`** at the repo root. Disables Jekyll entirely: nothing gets
+  transformed, underscore-prefixed paths stop being special, builds are faster.
+  For a hand-written static site there is no reason to leave Jekyll on.
+- **A private repo does not make the site private.** Pages output is publicly
+  reachable regardless — per-site access control is Enterprise only. The repo
+  stays private; the site is open to anyone with the URL.
+- **Pages from a private repo needs a paid plan.** Free publishes only from
+  public repos. `ecoledeballetmk` is an org, so Team or above. Confirm before
+  committing to Pages.
+
+### Custom domain
+
+`CNAME` file at the repo root containing `www.ecoledeballetmk.com`, plus DNS:
+`www` as a CNAME to `<org>.github.io`, and A records at the apex pointing to
+GitHub's Pages IPs so the bare domain redirects. Turn on **Enforce HTTPS** once
+the certificate is issued — it is free and auto-renewing, but not on by default.
+
+This has to match the canonical host already hardcoded in `sitemap.xml`,
+`robots.txt` and every page's `canonical` tag, which is currently **www**.
+
+### Smaller items
+
+- **`mailto:` will be scraped.** Unavoidable on any host, but her inbox is the
+  only contact channel on the site, so set up spam filtering before launch
+  rather than after.
+- **Google Fonts sends every visitor's IP to Google.** Self-hosting the two Zen
+  families removes a third-party dependency, drops a render-blocking request,
+  and sidesteps the question entirely. Not urgent, worth doing eventually.
+- **No contact form is possible on Pages.** Email-only is the current design,
+  which is fine. If a form is ever wanted, it needs a third party (Formspree
+  and similar) or a different host — Cloudflare Pages and Netlify both handle
+  forms natively and are otherwise equivalent for a site like this.
+
 ## Adding a page
 
 Nav lives in every file (the cost of no build step). If you add a page, add the
