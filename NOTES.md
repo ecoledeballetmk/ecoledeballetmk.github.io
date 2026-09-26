@@ -172,10 +172,10 @@ is a reasonable way to not have the question at all.
 
 ### Repository layout
 
-Everything served lives in **`html/`**. Everything else stays at the repo root
+Everything served lives in **`docs/`**. Everything else stays at the repo root
 and is never published:
 
-    html/            <- the site, and only the site
+    docs/            <- the site, and only the site
       index.html  css/  js/  img/
       robots.txt  sitemap.xml  favicon.ico
       CNAME        www.ecoledeballetmk.com
@@ -183,19 +183,17 @@ and is never published:
     NOTES.md       <- this file, not served
     .gitignore
 
-This keeps `NOTES.md` off the public site. It names the claims that are
-unverified and says the 設備 copy is inaccurate — Pages serves whatever is in
-the publishing source, and Jekyll would have turned it into `/NOTES.html`.
+Named `docs/` because that is the one non-root folder GitHub Pages will publish
+from when the source is a branch. Set it under **Settings > Pages > Build and
+deployment**: source `Deploy from a branch`, branch `main`, folder `/docs`.
 
-Point Pages at `html/` in Settings. Note that the branch-source dropdown only
-lists `/` and `/docs`; per GitHub's docs, "the source folder can either be the
-root of the repository (/) on the source branch or a /docs folder on the source
-branch." If `html/` can't be selected, rename it:
+The point of the split is keeping `NOTES.md` off the public site — it names the
+claims that are unverified and says the 設備 copy is inaccurate. Pages serves
+whatever sits in the publishing source, and Jekyll would have turned it into
+`/NOTES.html`.
 
-    git mv html docs
-
-Nothing inside the directory has to change — every path in the site is relative
-and internal, so the folder can be called anything without breaking a link.
+Every path in the site is relative and internal, so the folder can be renamed
+without breaking a link if you move to a host that allows any output directory.
 
 ### Before going live
 
