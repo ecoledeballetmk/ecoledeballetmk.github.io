@@ -35,6 +35,32 @@ The other five bullets are statements about her own teaching and are on the page
 (小林紀子バレエシアター退団). That leaves roughly thirty years unaccounted for —
 founding the school, teaching, any further RAD work. Worth extending.
 
+## 設備 copy assumes she owns the studio — she doesn't
+
+`facilities.html` reproduces her 2016 text, which is written from the position
+of someone who fitted out their own room:
+
+> スタジオに対してL字に装備してあります
+> バレエを踊りやすいリノリウムを使用しています
+
+She now **rents** studio space rather than running her own. The venues are
+consistent, so they can be named and published, but she does not own the
+mirrors or the floor and cannot claim to have installed them.
+
+Her reasoning is unaffected — a square room, mirrors she can check position in,
+a floor that is neither slippery nor grabby. What changes is the claim: from
+*we built it this way* to *we book rooms that meet these conditions*. That
+arguably reads stronger, since it says she turns down rooms that don't.
+
+Needs rewording in her voice, not mine. Same applies to the 設備 block on
+`index.html` and the 特徴 bullet 「バレエを踊ることのできるスペースと環境」
+on `philosophy.html`.
+
+## Everything here needs Miho's review before publishing
+
+All Japanese copy is hers, and most of it is from 2016-2022. Nothing on these
+pages should go live until she has read it back.
+
 ## Placeholders to replace
 
 | Where | What |
