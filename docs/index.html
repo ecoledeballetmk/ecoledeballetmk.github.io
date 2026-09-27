@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>école de ballet MK — クラシックバレエ教室</title>
-<meta name="description" content="クラシックバレエ教室 école de ballet MK。踊ること以前に大切なこと、それは身体形成にあると考えます。年齢に応じたクラス編成と少人数指導で、本物のバレエをお伝えします。">
+<meta name="description" content="千葉県我孫子市天王台・柏市明原のクラシックバレエ教室 école de ballet MK。踊ること以前に大切なこと、それは身体形成にあると考えます。年齢に応じたクラス編成と少人数指導のレッスン。">
 
 <link rel="canonical" href="https://www.ecoledeballetmk.com/">
 
@@ -13,13 +13,13 @@
 <meta property="og:locale" content="ja_JP">
 <meta property="og:url" content="https://www.ecoledeballetmk.com/">
 <meta property="og:title" content="école de ballet MK — クラシックバレエ教室">
-<meta property="og:description" content="クラシックバレエ教室 école de ballet MK。踊ること以前に大切なこと、それは身体形成にあると考えます。年齢に応じたクラス編成と少人数指導で、本物のバレエをお伝えします。">
+<meta property="og:description" content="千葉県我孫子市天王台・柏市明原のクラシックバレエ教室 école de ballet MK。踊ること以前に大切なこと、それは身体形成にあると考えます。年齢に応じたクラス編成と少人数指導のレッスン。">
 <meta property="og:image" content="https://www.ecoledeballetmk.com/img/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="école de ballet MK — クラシックバレエ教室">
-<meta name="twitter:description" content="クラシックバレエ教室 école de ballet MK。踊ること以前に大切なこと、それは身体形成にあると考えます。年齢に応じたクラス編成と少人数指導で、本物のバレエをお伝えします。">
+<meta name="twitter:description" content="千葉県我孫子市天王台・柏市明原のクラシックバレエ教室 école de ballet MK。踊ること以前に大切なこと、それは身体形成にあると考えます。年齢に応じたクラス編成と少人数指導のレッスン。">
 <meta name="twitter:image" content="https://www.ecoledeballetmk.com/img/og-card.png">
 
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -27,21 +27,65 @@
 <link rel="apple-touch-icon" href="img/icon.png">
 <meta name="theme-color" content="#e8e9eb">
 
+<!-- DanceSchool (a LocalBusiness subtype) rather than a bare Organization, now
+     that there are real addresses to declare. The two venues are Places linked
+     by `location`, not separate businesses: the rooms are rented, so they are
+     where the school teaches, not branches of it. No postalCode by decision, and
+     no telephone or openingHours because neither is confirmed. Keep in sync with
+     the .location blocks in the body and on studios.html. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "école de ballet MK",
-  "url": "https://www.ecoledeballetmk.com/",
-  "logo": "https://www.ecoledeballetmk.com/img/brand-logo.png",
-  "email": "info@ecoledeballetmk.com",
-  "description": "クラシックバレエ教室。年齢に応じたクラス編成と少人数指導で、身体形成を大切にしたレッスンを行っています。",
-  "founder": {
-    "@type": "Person",
-    "name": "Miho Andrews",
-    "jobTitle": "校長",
-    "hasCredential": "ARAD (Royal Academy of Dance)"
-  }
+  "@graph": [
+    {
+      "@type": "DanceSchool",
+      "@id": "https://www.ecoledeballetmk.com/#school",
+      "name": "école de ballet MK",
+      "url": "https://www.ecoledeballetmk.com/",
+      "logo": "https://www.ecoledeballetmk.com/img/brand-logo.png",
+      "image": "https://www.ecoledeballetmk.com/img/og-card.png",
+      "email": "info@ecoledeballetmk.com",
+      "description": "クラシックバレエ教室。年齢に応じたクラス編成と少人数指導で、身体形成を大切にしたレッスンを行っています。",
+      "founder": {
+        "@type": "Person",
+        "name": "Miho Andrews",
+        "jobTitle": "校長",
+        "hasCredential": "ARAD (Royal Academy of Dance)"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "我孫子市" },
+        { "@type": "City", "name": "柏市" }
+      ],
+      "location": [
+        { "@id": "https://www.ecoledeballetmk.com/#tennodai" },
+        { "@id": "https://www.ecoledeballetmk.com/#kashiwa" }
+      ]
+    },
+    {
+      "@type": "Place",
+      "@id": "https://www.ecoledeballetmk.com/#tennodai",
+      "name": "école de ballet MK 天王台スタジオ",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "JP",
+        "addressRegion": "千葉県",
+        "addressLocality": "我孫子市",
+        "streetAddress": "天王台2-1-21 ハチヤビル2F"
+      }
+    },
+    {
+      "@type": "Place",
+      "@id": "https://www.ecoledeballetmk.com/#kashiwa",
+      "name": "école de ballet MK 柏スタジオ",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "JP",
+        "addressRegion": "千葉県",
+        "addressLocality": "柏市",
+        "streetAddress": "明原1-2-4 カプリコーンビル2F"
+      }
+    }
+  ]
 }
 </script>
 
@@ -66,9 +110,7 @@
         <ul>
             <li><a href="index.html" aria-current="page">ホーム</a></li>
             <li><a href="philosophy.html">フィロソフィー</a></li>
-            <li><a href="facilities.html">設備</a></li>
             <li><a href="profile.html">プロフィール</a></li>
-            <li><a href="classes.html">クラス案内</a></li>
             <li><a href="studios.html">スタジオ</a></li>
             <li><a href="contact.html">お問い合わせ</a></li>
         </ul>
@@ -115,56 +157,62 @@
         </div>
     </section>
 
-    <!-- 設備 — three tenets, each mark drawn as the geometry it describes -->
+    <!-- 設備 — the only copy of this content on the site. facilities.html was
+         deleted as a near-duplicate of this block; her full archive wording came
+         back here rather than being condensed, so nothing of hers was lost. Each
+         tenet-mark is drawn as the geometry the item describes. -->
     <section class="section">
         <div class="section-head">
             <p class="section-label">設備</p>
             <h2 class="section-title">正しく学べる環境</h2>
-            <p class="section-lede measure">様々なバレエのパ（動き）を正確に習得し、ポジションの確認をしながら、踊りにつなげられることが重要です。</p>
+            <p class="section-lede measure">バレエを正しくお伝えするためには、スタジオ内の装備・環境が重要です。様々なバレエのパ（動き）を正確に習得できる広さであるスタジオ、ポジションの確認をするための鏡、バレエ用リノリウムを使用し、踊りにつなげられるよう努めています。</p>
         </div>
 
         <ul class="tenets">
-            <li class="tenet">
+            <li class="tenet tenet--studio">
                 <div class="tenet-mark" aria-hidden="true"></div>
                 <h3>スタジオ</h3>
-                <p>バレエはまず、まっすぐに立つことから始まります。身体をスクエア（四角）にとらえ、左右を同じ位置・同じ高さに保つために、訓練する場所が四角い形状であること、バーをスタジオに対して直角又は平行に置くことが必要だと考えます。</p>
+                <p>バレエはまず、まっすぐに立つことから始まります。身体をスクエア（四角）にとらえ、左右を同じ位置・同じ高さに保つことは、簡単なようで大変難しいことです。そこで、訓練する場所が四角い形状であること、バーを置く場合、スタジオに対して直角又は平行に置くことが必要だと考えます。</p>
             </li>
-            <li class="tenet">
+            <!-- 鏡 — held back, not deleted. This is her 2016 text from a room
+                 she fitted out herself. Neither rented studio is believed to
+                 have L-shaped mirrors now, so publishing it would describe
+                 equipment that isn't there. Restore only if a venue actually
+                 has them, and reword 「装備してあります」 first — she doesn't
+                 install the mirrors in a room she rents.
+            <li class="tenet tenet--mirror">
                 <div class="tenet-mark" aria-hidden="true"></div>
                 <h3>鏡</h3>
-                <p>前方と側面から、身体を自分の目で見て確認できるよう、スタジオに対してL字に装備しています。</p>
+                <p>前方と側面から、身体を自分の目で見て確認できるよう、スタジオに対してL字に装備してあります。</p>
             </li>
-            <li class="tenet">
+            -->
+            <li class="tenet tenet--floor">
                 <div class="tenet-mark" aria-hidden="true"></div>
-                <h3>バレエ用の床</h3>
+                <h3>バレエ用の床、リノリウム</h3>
                 <p>バレエは、滑りやすい床では踊ることが出来ません。かといって、ピルエット（回転）の時にシューズが引っ掛かってしまってもいけません。バレエを踊りやすいリノリウムを使用しています。</p>
             </li>
         </ul>
     </section>
 
-    <!-- スタジオ — generic, unnamed. Duplicate a .location block to add one. -->
+    <!-- スタジオ — must match studios.html and the JSON-LD @graph above.
+         Duplicate a .location block to add a venue. -->
     <section class="section">
         <div class="section-head">
             <p class="section-label">スタジオ</p>
             <h2 class="section-title">レッスン会場</h2>
-            <p class="section-lede measure">各会場の所在地とアクセスはお問い合わせください。</p>
+            <p class="section-lede measure">千葉県我孫子市天王台と柏市明原の2会場で、クラシックバレエのレッスンを行っています。</p>
         </div>
 
-        <svg class="placeholder" viewBox="0 0 800 340" role="img" aria-label="スタジオ写真のプレースホルダー">
-            <line class="grid-line" x1="0" y1="170" x2="800" y2="170"></line>
-            <line class="grid-line" x1="400" y1="0" x2="400" y2="340"></line>
-            <rect class="mark" x="330" y="100" width="140" height="140"></rect>
-            <text x="400" y="290" text-anchor="middle">Photo placeholder</text>
-        </svg>
-
-        <div class="locations" style="margin-top:1.25rem">
+        <div class="locations">
             <div class="location">
-                <h3>スタジオ A</h3>
-                <p>会場名・所在地は未定です。</p>
+                <h3>天王台スタジオ</h3>
+                <address>千葉県我孫子市天王台2-1-21<br>ハチヤビル2F</address>
+                <p class="access">最寄り駅：天王台駅（JR常磐線）から徒歩5分</p>
             </div>
             <div class="location">
-                <h3>スタジオ B</h3>
-                <p>会場名・所在地は未定です。</p>
+                <h3>柏スタジオ</h3>
+                <address>千葉県柏市明原1-2-4<br>カプリコーンビル2F</address>
+                <p class="access">最寄り駅：柏駅（JR常磐線・東武アーバンパークライン、東京メトロ千代田線直通）から徒歩10分</p>
             </div>
         </div>
     </section>

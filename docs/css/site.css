@@ -426,9 +426,12 @@ p:last-child {
     border: 1px solid var(--rule);
 }
 
+/* auto-fit, not repeat(3) — the 鏡 tenet is commented out, and a fixed three
+   columns left an empty track sitting there as a grey box. This reflows to
+   however many tenets are actually present. */
 @media (min-width: 52rem) {
     .tenets {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     }
 }
 
@@ -445,15 +448,18 @@ p:last-child {
     border-top: 1px solid var(--carmine);
 }
 
-/* the mirror sits in an L — its mark is rotated to say so */
-.tenet:nth-child(2) .tenet-mark {
+/* Keyed by class, not nth-child: commenting a tenet out used to shift these
+   onto the wrong card. Each mark is drawn as the geometry its item describes.
+
+   the mirror sits in an L — its mark is rotated to say so */
+.tenet--mirror .tenet-mark {
     border-left: 1px solid var(--carmine);
     border-top: 0;
     border-bottom: 1px solid var(--carmine);
 }
 
 /* the floor is a plane — a level line */
-.tenet:nth-child(3) .tenet-mark {
+.tenet--floor .tenet-mark {
     border: 0;
     border-bottom: 1px solid var(--carmine);
     height: 0.75rem;
@@ -499,32 +505,22 @@ p:last-child {
     margin-bottom: 0;
 }
 
-/* ---------- placeholder art ----------
-   Deliberately unmistakable as a placeholder: the alignment grid, labelled. */
-.placeholder {
-    display: block;
-    width: 100%;
-    background: var(--paper);
-    border: 1px solid var(--rule);
+/* The postal address is the point of the card, so it reads at body size in ink
+   while the access line stays secondary. <address> italicises by default. */
+.location address {
+    font-style: normal;
+    line-height: 1.8;
+    margin-bottom: 0.75em;
 }
 
-.placeholder text {
-    font-family: var(--font-body);
-    font-size: 11px;
-    letter-spacing: 0.24em;
-    fill: var(--marley-soft);
-    text-transform: uppercase;
-}
-
-.placeholder .grid-line {
-    stroke: var(--rule);
-    stroke-width: 1;
-}
-
-.placeholder .mark {
-    stroke: var(--rose);
-    stroke-width: 1;
-    fill: none;
+/* keep-all stops the line wrapping inside a katakana run — without it
+   「東武アーバンパークライン」 splits mid-word, which reads as a typo. */
+.location .access {
+    font-size: var(--t-small);
+    color: var(--marley);
+    margin-bottom: 0;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
 }
 
 /* ---------- contact ---------- */
@@ -765,10 +761,18 @@ p:last-child {
     color: var(--marley);
 }
 
-/* ---------- portrait / figure ---------- */
+/* ---------- portrait / figure ----------
+   No page uses this yet — the site ships without photographs. Kept so that
+   dropping an <img> into a <figure class="figure"> needs no CSS work. */
 .figure {
     margin: 0 0 clamp(1.5rem, 4vh, 2.25rem);
     max-width: var(--measure);
+}
+
+.figure img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 .figure figcaption {
