@@ -273,7 +273,8 @@ without breaking a link if you move to a host that allows any output directory.
 
 ### Custom domain
 
-`CNAME` file at the repo root containing `www.ecoledeballetmk.com`, plus DNS:
+`docs/CNAME` containing `www.ecoledeballetmk.com` — it has to sit in the
+publishing source, not the repo root, or Pages never reads it. Plus DNS:
 `www` as a CNAME to `<org>.github.io`, and A records at the apex pointing to
 GitHub's Pages IPs so the bare domain redirects. Turn on **Enforce HTTPS** once
 the certificate is issued — it is free and auto-renewing, but not on by default.
